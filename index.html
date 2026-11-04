@@ -14,8 +14,17 @@
   --brown: #65534c;
   --dark: #443b37;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; }.paw-decoration {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 35px;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 5;
+}
+html { scroll-behavior: smooth; }  
+
 body {
   font-family: Arial, sans-serif;
   background: var(--cream);
@@ -204,10 +213,10 @@ footer p { font-size: 13px; opacity: .85; }
 <body>
 
 <header>
-  <div class="logo">Taffecita <span>??</span></div>
+  <div class="logo">Taffecita <span>	ğŸ¾ â™¡ ğŸŒ·</span></div>
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#categorias">Categorías</a>
+    <a href="#categorias">CategorÃ­as</a>
     <a href="#blog">Blog</a>
     <a href="#consejos">Consejos</a>
   </nav>
@@ -216,14 +225,14 @@ footer p { font-size: 13px; opacity: .85; }
 <main>
 <section class="hero" id="inicio">
   <div>
-    <span class="eyebrow">? Bienvenidos a Taffecita ?</span>
+    <span class="eyebrow">? Bienvenidos a Taffecita ğŸ’–</span>
     <h1>Un mundo lleno de patitas.</h1>
     <p>
       Un espacio creado para quienes aman a los animales.
       Descubre consejos, curiosidades y todo lo que necesitas
-      saber para cuidar a tus pequeños compañeros.
+      saber para cuidar a tus pequeÃ±os compaÃ±eros.
     </p>
-    <a href="#blog" class="btn">Explorar artículos ?</a>
+    <a href="#blog" class="btn">Explorar artÃ­culos âœ¨</a>
   </div>
   <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=900"
        alt="Perro disfrutando del aire libre">
@@ -234,22 +243,22 @@ footer p { font-size: 13px; opacity: .85; }
   <p class="subtitle">Todo lo que necesitas saber sobre tus mascotas.</p>
   <div class="categories">
     <a class="category" href="#blog">
-      <div class="emoji">??</div>
+      <div class="emoji">ğŸ¾</div>
       <h3>Perros</h3>
       <p>Cuidados y consejos</p>
     </a>
     <a class="category" href="#blog">
-      <div class="emoji">??</div>
+      <div class="emoji">ğŸŒ¹</div>
       <h3>Gatos</h3>
       <p>Secretos felinos</p>
     </a>
     <a class="category" href="#blog">
-      <div class="emoji">??</div>
-      <h3>Pequeños animales</h3>
+      <div class="emoji">ğŸ</div>
+      <h3>PequeÃ±os animales</h3>
       <p>Un mundo de ternura</p>
     </a>
     <a class="category" href="#consejos">
-      <div class="emoji">??</div>
+      <div class="emoji">-ğŸ’</div>
       <h3>Bienestar</h3>
       <p>Amor y responsabilidad</p>
     </a>
@@ -257,11 +266,11 @@ footer p { font-size: 13px; opacity: .85; }
 </section>
 
 <section class="blog" id="blog">
-  <h2 class="section-title">Nuestro pequeño blog</h2>
-  <p class="subtitle">Historias, información y mucho amor animal.</p>
+  <h2 class="section-title">Nuestro pequeÃ±o blog</h2>
+  <p class="subtitle">Historias, informaciÃ³n y mucho amor animal.</p>
 
   <input class="search" id="search"
-         type="search" placeholder="?? Buscar artículos...">
+         type="search" placeholder="ğŸ€ Buscar artÃ­culos...">
 
   <div class="articles" id="articles">
 
@@ -270,10 +279,10 @@ footer p { font-size: 13px; opacity: .85; }
            alt="Perro">
       <div class="article-content">
         <span class="tag">Cuidados</span>
-        <h3>¿Cómo cuidar a tu perro?</h3>
-        <p>Aprende sobre sus necesidades básicas, paseos,
+        <h3>Â¿CÃ³mo cuidar a tu perro?</h3>
+        <p>Aprende sobre sus necesidades bÃ¡sicas, paseos,
            higiene y visitas al veterinario.</p>
-        <button onclick="readArticle('perro')">Leer más ?</button>
+        <button onclick="readArticle('perro')">Leer mÃ¡s </button>
       </div>
     </article>
 
@@ -285,7 +294,7 @@ footer p { font-size: 13px; opacity: .85; }
         <h3>El fascinante mundo de los gatos</h3>
         <p>Descubre algunas curiosidades sobre el
            comportamiento de nuestros amigos felinos.</p>
-        <button onclick="readArticle('gato')">Leer más ?</button>
+        <button onclick="readArticle('gato')">Leer mÃ¡s ?</button>
       </div>
     </article>
 
@@ -293,11 +302,11 @@ footer p { font-size: 13px; opacity: .85; }
       <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=700"
            alt="Mascota comiendo">
       <div class="article-content">
-        <span class="tag">Alimentación</span>
-        <h3>La importancia de una buena alimentación</h3>
-        <p>Conoce por qué cada mascota necesita
-           una alimentación adecuada a su especie.</p>
-        <button onclick="readArticle('alimentacion')">Leer más ?</button>
+        <span class="tag">AlimentaciÃ³n</span>
+        <h3>La importancia de una buena alimentaciÃ³n</h3>
+        <p>Conoce por quÃ© cada mascota necesita
+           una alimentaciÃ³n adecuada a su especie.</p>
+        <button onclick="readArticle('alimentacion')">Leer mÃ¡s ?</button>
       </div>
     </article>
 
@@ -308,21 +317,21 @@ footer p { font-size: 13px; opacity: .85; }
   <h2 class="section-title">Un recordatorio especial ?</h2>
   <div class="tip-box">
     <div style="font-size:45px">??</div>
-    <h3>El amor también es responsabilidad.</h3>
+    <h3>El amor tambiÃ©n es responsabilidad.</h3>
     <p>
       Tener una mascota significa ofrecerle tiempo,
-      atención, alimento, un ambiente seguro y cuidados
+      atenciÃ³n, alimento, un ambiente seguro y cuidados
       veterinarios. Todos los animales merecen respeto,
-      protección y una vida digna.
+      protecciÃ³n y una vida digna.
     </p>
   </div>
 </section>
 </main>
 
 <footer>
-  <h2>Taffecita ??</h2>
+  <h2>Taffecita â™¡ ï½¡ï¾Ÿâ€¢â”ˆà­¨â™¡à­§â”ˆâ€¢ï¾Ÿï½¡ â™¡</h2>
   <p>Hecho con mucho amor para los amantes de los animales.</p>
-  <p style="margin-top:12px">© 2026 Taffecita · Todos los derechos reservados.</p>
+  <p style="margin-top:12px">Â© 2026 Taffecita Â· Todos los derechos reservados.</p>
 </footer>
 
 <script>
@@ -339,8 +348,8 @@ search.addEventListener("input", () => {
 
 function readArticle(type) {
   const messages = {
-    perro: "Los perros necesitan agua fresca, alimentación adecuada, ejercicio, higiene, compañía y controles veterinarios. Sus cuidados deben adaptarse a su edad, tamaño y necesidades.",
-    gato: "Los gatos se comunican mediante sonidos, posturas y movimientos de su cola. También necesitan espacios seguros, enriquecimiento ambiental, higiene y revisiones veterinarias.",
+    perro: "Los perros necesitan agua fresca, alimentaciÃ³n adecuada, ejercicio, higiene, compaÃ±Ã­a y controles veterinarios. Sus cuidados deben adaptarse a su edad, tamaÃ±o y necesidades.",
+    gato: "Los gatos se comunican mediante sonidos, posturas y movimientos de su cola. TambiÃ©n necesitan espacios seguros, enriquecimiento ambiental, higiene y revisiones veterinarias.",
     alimentacion: "Cada especie tiene necesidades nutricionales diferentes. Consulta con un veterinario para elegir alimentos completos y adecuados. Evita ofrecer alimentos peligrosos para tu mascota."
   };
   alert(messages[type]);
