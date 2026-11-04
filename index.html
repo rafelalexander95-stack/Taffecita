@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taffecita | Un mundo de patitas</title>
+<style>
+:root {
+  --pink: #e9b9c5;
+  --soft-pink: #f8e9eb;
+  --cream: #fffaf3;
+  --sage: #a9b9a1;
+  --brown: #65534c;
+  --dark: #443b37;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
+header {
+  background: rgba(255,250,243,.96);
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #f0e4dd;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #bd8292;
+  font-weight: bold;
+}
+.logo span { font-size: 22px; }
+nav { display: flex; gap: 23px; }
+nav a {
+  text-decoration: none;
+  color: var(--brown);
+  font-size: 14px;
+}
+nav a:hover { color: #c27d91; }
+.hero {
+  padding: 75px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+}
+.eyebrow {
+  color: #b77d8e;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 70px);
+  line-height: 1.1;
+  color: #70565a;
+  margin: 18px 0;
+}
+.hero p { max-width: 450px; color: #756963; }
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: #d9a5b3;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: .2s;
+}
+.btn:hover { background: #bd8292; transform: translateY(-2px); }
+.hero img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 48% 48% 20px 20px;
+}
+section { padding: 65px 8%; }
+.section-title {
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  color: #70565a;
+  margin-bottom: 12px;
+}
+.subtitle {
+  text-align: center;
+  color: #897d75;
+  margin-bottom: 35px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+.category {
+  background: white;
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--brown);
+  box-shadow: 0 5px 20px #78665b0d;
+  transition: .2s;
+}
+.category:hover { transform: translateY(-5px); }
+.category .emoji { font-size: 35px; }
+.category h3 { margin-top: 8px; }
+.blog { background: #f8edef; }
+.search {
+  display: block;
+  width: min(100%, 450px);
+  margin: 0 auto 30px;
+  padding: 13px 20px;
+  border: 1px solid #e8d4d8;
+  border-radius: 30px;
+  background: white;
+  font-size: 15px;
+  outline-color: var(--pink);
+}
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+.article {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #78665b0d;
+}
+.article img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+.article-content { padding: 22px; }
+.tag {
+  color: #b77d8e;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.article h3 {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  margin: 8px 0;
+}
+.article p { font-size: 14px; color: #82766e; }
+.article button {
+  border: none;
+  background: transparent;
+  color: #b77d8e;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 14px;
+}
+.tips {
+  background: #eaf0e6;
+  text-align: center;
+}
+.tip-box {
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 25px;
+}
+.tip-box p { color: #756963; margin-top: 12px; }
+footer {
+  background: #705d57;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+footer h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+footer p { font-size: 13px; opacity: .85; }
+.no-results { text-align:center; grid-column:1/-1; }
+@media(max-width:750px) {
+  header { flex-direction: column; gap: 12px; }
+  nav { flex-wrap: wrap; justify-content: center; gap: 13px; }
+  .hero { grid-template-columns: 1fr; padding-top: 45px; }
+  .hero img { height: 280px; }
+  .categories { grid-template-columns: repeat(2,1fr); }
+  .articles { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Taffecita <span>??</span></div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#blog">Blog</a>
+    <a href="#consejos">Consejos</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div>
+    <span class="eyebrow">? Bienvenidos a Taffecita ?</span>
+    <h1>Un mundo lleno de patitas.</h1>
+    <p>
+      Un espacio creado para quienes aman a los animales.
+      Descubre consejos, curiosidades y todo lo que necesitas
+      saber para cuidar a tus pequeños compañeros.
+    </p>
+    <a href="#blog" class="btn">Explorar artículos ?</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=900"
+       alt="Perro disfrutando del aire libre">
+</section>
+
+<section id="categorias">
+  <h2 class="section-title">Explora nuestro mundo</h2>
+  <p class="subtitle">Todo lo que necesitas saber sobre tus mascotas.</p>
+  <div class="categories">
+    <a class="category" href="#blog">
+      <div class="emoji">??</div>
+      <h3>Perros</h3>
+      <p>Cuidados y consejos</p>
+    </a>
+    <a class="category" href="#blog">
+      <div class="emoji">??</div>
+      <h3>Gatos</h3>
+      <p>Secretos felinos</p>
+    </a>
+    <a class="category" href="#blog">
+      <div class="emoji">??</div>
+      <h3>Pequeños animales</h3>
+      <p>Un mundo de ternura</p>
+    </a>
+    <a class="category" href="#consejos">
+      <div class="emoji">??</div>
+      <h3>Bienestar</h3>
+      <p>Amor y responsabilidad</p>
+    </a>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <h2 class="section-title">Nuestro pequeño blog</h2>
+  <p class="subtitle">Historias, información y mucho amor animal.</p>
+
+  <input class="search" id="search"
+         type="search" placeholder="?? Buscar artículos...">
+
+  <div class="articles" id="articles">
+
+    <article class="article">
+      <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=700"
+           alt="Perro">
+      <div class="article-content">
+        <span class="tag">Cuidados</span>
+        <h3>¿Cómo cuidar a tu perro?</h3>
+        <p>Aprende sobre sus necesidades básicas, paseos,
+           higiene y visitas al veterinario.</p>
+        <button onclick="readArticle('perro')">Leer más ?</button>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=700"
+           alt="Gato">
+      <div class="article-content">
+        <span class="tag">Curiosidades</span>
+        <h3>El fascinante mundo de los gatos</h3>
+        <p>Descubre algunas curiosidades sobre el
+           comportamiento de nuestros amigos felinos.</p>
+        <button onclick="readArticle('gato')">Leer más ?</button>
+      </div>
+    </article>
+
+    <article class="article">
+      <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=700"
+           alt="Mascota comiendo">
+      <div class="article-content">
+        <span class="tag">Alimentación</span>
+        <h3>La importancia de una buena alimentación</h3>
+        <p>Conoce por qué cada mascota necesita
+           una alimentación adecuada a su especie.</p>
+        <button onclick="readArticle('alimentacion')">Leer más ?</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="tips" id="consejos">
+  <h2 class="section-title">Un recordatorio especial ?</h2>
+  <div class="tip-box">
+    <div style="font-size:45px">??</div>
+    <h3>El amor también es responsabilidad.</h3>
+    <p>
+      Tener una mascota significa ofrecerle tiempo,
+      atención, alimento, un ambiente seguro y cuidados
+      veterinarios. Todos los animales merecen respeto,
+      protección y una vida digna.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <h2>Taffecita ??</h2>
+  <p>Hecho con mucho amor para los amantes de los animales.</p>
+  <p style="margin-top:12px">© 2026 Taffecita · Todos los derechos reservados.</p>
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const articles = [...document.querySelectorAll(".article")];
+
+search.addEventListener("input", () => {
+  const term = search.value.toLowerCase();
+  articles.forEach(article => {
+    article.style.display =
+      article.innerText.toLowerCase().includes(term) ? "" : "none";
+  });
+});
+
+function readArticle(type) {
+  const messages = {
+    perro: "Los perros necesitan agua fresca, alimentación adecuada, ejercicio, higiene, compañía y controles veterinarios. Sus cuidados deben adaptarse a su edad, tamaño y necesidades.",
+    gato: "Los gatos se comunican mediante sonidos, posturas y movimientos de su cola. También necesitan espacios seguros, enriquecimiento ambiental, higiene y revisiones veterinarias.",
+    alimentacion: "Cada especie tiene necesidades nutricionales diferentes. Consulta con un veterinario para elegir alimentos completos y adecuados. Evita ofrecer alimentos peligrosos para tu mascota."
+  };
+  alert(messages[type]);
+}
+</script>
+</body>
+</html>
